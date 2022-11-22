@@ -73,4 +73,17 @@ inquirer.prompt([
 
 ]).then(response=>{
     console.log(JSON.stringify(response));
+
+    const README1 = 
+        `   ${response.title}
+            ${response.Description}
+            ${response.motivation}
+            ${response.reasonOfProject}
+            ${response.Installation}
+            ${response.Credits}
+            ${response.License}
+        `
+
+        fs.writeFile('README1.md', README1, (err)=>
+        err ? console.error(err) : console.log('Commit logged'));
 })
