@@ -71,4 +71,6 @@ inquirer.prompt([
         choices: ['MIT', 'Apache', 'No License']
     }
 
-])
+]).then(response=>{
+    console.log(JSON.stringify(response));
+})
