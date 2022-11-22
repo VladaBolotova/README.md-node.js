@@ -1,25 +1,74 @@
 // TODO: Include packages needed for this application
 
-const inquirer  = require("inquirer");
+// const inquirer  = require("inquirer");
 
 // TODO: Create an array of questions for user input
-const questions = [    {
-    name:"title",
-    message: "What is your title project?",
-    type:"text",
-},     {
-    name:"Description",
-    message:"What is the description of your project ?",
-    type:"text"
-},]
+// const questions = [    {
+//     name:"title",
+//     message: "What is your title project?",
+//     type:"text",
+// },     {
+//     name:"Description",
+//     message:"What is the description of your project ?",
+//     type:"text"
+// },]
 
 // TODO: Create a function to write README file
-function writeToFile(fileName, data) {}
+// function writeToFile(fileName, data) {}
 
 // TODO: Create a function to initialize app
-function init() {
-    inquirer.prompt(questions)
-}
+// function init() {
+//     inquirer.prompt(questions)
+// }
 
 // Function call to initialize app
-init();
+// init();
+
+const fs = require('fs');
+
+const inquirer=require("inquirer");
+
+inquirer.prompt([
+    {
+        name:"title",
+        message: "What is your title project?",
+        type:"text",
+    },
+    {
+        name:"Description",
+        message:"What is the description of your project ?",
+        type:"text"
+    },
+    {
+        name:"motivation",
+        message:"What was your motivation?",
+        type:"text"
+    },
+    {
+        name:"reasonOfProject",
+        message:"Why did you build this project?",
+        type:"text"
+    },
+    {
+        name:"Installation",
+        message:"What are the installations?",
+        type:"text"
+    },
+    {
+        name:"Usage",
+        message:"Usage?",
+        type:"text"
+    },
+    {
+        name:"Credits",
+        message:"Credits?",
+        type:"text"
+    },
+    {
+        name:"License",
+        message:"License?",
+        type:"list",
+        choices: ['MIT', 'Apache', 'No License']
+    }
+
+])
