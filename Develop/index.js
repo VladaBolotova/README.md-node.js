@@ -81,7 +81,10 @@ const outputCyanText = (text) => console.log(`\x1b[36m${text}\x1b[0m`);
 
 const README1 = 
 `# ${response.title}
-## ${response.Description}
+
+## Description
+${response.Description}
+
 -[Itstallation](#installation)
 -[Usage](#usage)
 -[Credits](#credits)
