@@ -40,16 +40,6 @@ inquirer.prompt([
         type:"text"
     },
     {
-        name:"motivation",
-        message:"What was your motivation?",
-        type:"text"
-    },
-    {
-        name:"reasonOfProject",
-        message:"Why did you build this project?",
-        type:"text"
-    },
-    {
         name:"Installation",
         message:"What are the installations?",
         type:"text"
@@ -69,21 +59,52 @@ inquirer.prompt([
         message:"License?",
         type:"list",
         choices: ['MIT', 'Apache', 'No License']
+    },
+    {
+        name:"Email",
+        message:"What is your email?",
+        type:"input",
+     
+    },
+    {
+        name:"GitHub",
+        message:"What is your GitHub repository?",
+        type:"input",
+      
+        
     }
 
 ]).then(response=>{
     console.log(JSON.stringify(response));
 
-    const README1 = 
-        `   ${response.title}
-            ${response.Description}
-            ${response.motivation}
-            ${response.reasonOfProject}
-            ${response.Installation}
-            ${response.Credits}
-            ${response.License}
-        `
+const outputCyanText = (text) => console.log(`\x1b[36m${text}\x1b[0m`);
 
+const README1 = 
+`# ${response.title}
+## ${response.Description}
+-[Itstallation](#installation)
+-[Usage](#usage)
+-[Credits](#credits)
+-[License](#license)
+
+
+## Installation:
+ ${response.Installation}
+## Usage:
+ ${response.Usage}
+## Credits:
+ ${response.Credits}
+## License: 
+ ${response.License}
+
+# Questions:
+* Email: ${response.Email}
+* GitHub: ${response.GitHub}
+        `
+       
         fs.writeFile('README1.md', README1, (err)=>
         err ? console.error(err) : console.log('Commit logged'));
+         for(const outputCyanText of README1){
+            console.log( '\x1b[36m%s\x1b[0m',outputCyanText);
+          }
 })
