@@ -21,4 +21,3 @@ It is a command-line application that helps us to dynamically generate a file ba
 # Questions:
 * Email: vladislavabolotova@gmail.com
 * GitHub: VladaBolotova
-        
